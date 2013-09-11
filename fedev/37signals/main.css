@@ -1,20 +1,102 @@
-body {
-    font-family:Georgia, serif;
+body.globalfont {
+    font-family:'Times New Roman', Georgia, serif;
+    color:#222;
+    line-height: 3em;
 }
 
 div.nav ul li {
 	display:inline;
 	list-style-type:none;
 	font-size:12px;
-	font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-	margin-left:0;
-	padding:0;
+	font-family:'Lucida Grande', 'Lucida Sans Unicode',Verdana, sans-serif;
 }
 
 div.nav li.days {
 	color:#999;
+	padding-left:0;
+	margin-left:-30px;
 }
 
-div.nav li.blog {
-	margin-left:100px;
+.largelogo {
+    text-align: center;
+    top: 100px;
 }
+
+#firstline-2nd {
+	margin-left:400px;
+}
+
+div.nav ul li.firstline-3rd {
+	padding-left: 25px;
+}
+
+div.nav ul li.signin {
+	margin-left:25px;
+}
+
+div.first-heading {
+	font-size:27px;
+	width:875px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:-30px;
+	
+}
+
+div.first-heading h2 {
+	font-size:20px;
+}
+
+div.first-box-container {
+	text-align: center;
+}
+
+div.first-box {
+	height:250px;
+	width:180px;
+	border:2px solid #e8e8e8;
+	background-color: #efefef;
+	border-radius:5px;
+	display:inline-block;
+	margin-right:40px;
+}
+.first-box img {
+	float:left;
+	margin-left:30px;
+	margin-top:20px;
+	padding:0;
+}
+
+.first-box h1 {
+	float:left;
+	color:#369;
+	margin-left:20px;
+	margin-top:-5px;
+	font-size:21px;
+	text-decoration:underline;
+	font-family: 'Lucinda Grande','Lucida Sans Unicode', Verdana, sans-serif;
+	font-weight:bold;
+}
+
+.first-box h1 span {
+	color:#999;
+	font-weight:normal;
+	font-size:15px;
+}
+
+.first-box h2 {
+	float:left;
+	color:red;
+	font-size:18px;
+	margin-left:18px;
+	margin-top:-20px;
+}
+
+.first-box h3 {
+	float:left;
+	color:black;
+	font-size:15px;
+	margin-left:18px;
+	margin-bottom:-10px;
+}
+
