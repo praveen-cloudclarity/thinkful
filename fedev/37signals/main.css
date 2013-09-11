@@ -67,7 +67,7 @@ div.first-box {
 	padding:0;
 }
 
-.first-box h1 {
+.first-box h3 {
 	float:left;
 	color:#369;
 	margin-left:20px;
@@ -78,25 +78,28 @@ div.first-box {
 	font-weight:bold;
 }
 
-.first-box h1 span {
+.first-box h3 span {
 	color:#999;
 	font-weight:normal;
 	font-size:15px;
 }
 
-.first-box h2 {
+.first-box h4 {
 	float:left;
-	color:red;
+	color:#cc0000;
 	font-size:18px;
 	margin-left:18px;
-	margin-top:-20px;
+	margin-top:-40px;
 }
 
-.first-box h3 {
+.first-box p {
 	float:left;
-	color:black;
-	font-size:15px;
-	margin-left:18px;
+	color:#222;
+	font-size:14px;
+	font-family: 'Lucinda Grande','Lucida Sans Unicode', Verdana, sans-serif;
+	line-height: 1.4em;
+	margin-top:-10px;
+	margin-left:5px;
 	margin-bottom:-10px;
 }
 
