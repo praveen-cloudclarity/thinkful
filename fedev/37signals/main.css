@@ -184,13 +184,14 @@ div.third-box-container {
 	text-align:center;
 }
 div.first-column {
-	float:left;
+	position:absolute;
 	width:380px;
 	margin-right:40px;
 	text-align:left;
 	font-family:'Lucinda Grande','Lucida Sans Unicode', Verdana, sans-serif;
 	line-height: 1.4em;
 	font-size:12px;
+	margin-top: 550px
 }
 div.first-column h3 {
 	float:left;
@@ -218,10 +219,11 @@ div.first-column p {
 }
 
 div.second-column {
-	float:left;
+	position:relative;
 	width:380px;
-	margin-top: -10px;
+	padding-top: 1000px
 	margin-bottom:-100px;
+	margin-left:400px;
 	text-align:left;
 	font-family:'Lucinda Grande','Lucida Sans Unicode', Verdana, sans-serif;
 	line-height: 1.4em;
@@ -255,6 +257,7 @@ div.second-column p {
 }
 div.fourth_box_container {
 	text-align:center;
+	padding-top:100px;
 }
 
 .rework h2 {
@@ -269,13 +272,13 @@ div.fourth_box_container {
 
 .rework-arrow {
 	float:left;
-	margin-left:-330px;
+	margin-left:-130px;
 	margin-top:180px;
 }
 
 .rework-crumble {
 	float:left;
-	margin-left:880px;
+	margin-left:1100px;
 	margin-top:-100px;
 }
 .rework p {
