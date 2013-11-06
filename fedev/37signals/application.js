@@ -6,10 +6,7 @@ $(document).ready(function() {
 		var img = '<img ' + 'class="arrow-basecamp "' + 'src="images/arrow-left.png "' + 'width="69 "' + 'height="50 "' + '/>';
 		$basec.append(img);
 		
-		}, function() {
-		$("div.first-heading h1").text('Making collaboration productive and enjoyable for people every day.');
-		$("div.first-heading h2").text("Frustration-free web-based apps for collaboration, sharing information and making decisions.");	
-		$(".arrow-basecamp").remove();
+		}, function() {appendArrow();
 	});
 	$highrise = $('#highrise');
 	$('#highrise').hover(function() {
@@ -19,9 +16,7 @@ $(document).ready(function() {
 		$highrise.append(img);
 		
 		}, function() {
-		$("div.first-heading h1").text("Making collaboration productive and enjoyable for people every day.");
-		$("div.first-heading h2").text("Frustration-free web-based apps for collaboration, sharing information and making decisions.");	
-		$(".arrow-basecamp").remove();
+			appendArrow();
 	});	
 	$campfire = $('#campfire');
 	$('#campfire').hover(function() {
@@ -31,8 +26,11 @@ $(document).ready(function() {
 		$campfire.append(img);
 		
 		}, function() {
-		$("div.first-heading h1").text("Making collaboration productive and enjoyable for people every day.");
-		$("div.first-heading h2").text("Frustration-free web-based apps for collaboration, sharing information and making decisions.");	
-		$(".arrow-campfire").remove();
+		appendArrow();
 	});			
 })
+function appendArrow() {
+		$("div.first-heading h1").text("Making collaboration productive and enjoyable for people every day.");
+		$("div.first-heading h2").text("Frustration-free web-based apps for collaboration, sharing information and making decisions.");	
+		$(".arrow-basecamp").remove();
+}
