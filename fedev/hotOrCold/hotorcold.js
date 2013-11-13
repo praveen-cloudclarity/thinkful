@@ -14,11 +14,15 @@ var hotOrCold = (function($) {
 	onClickAnimate = function() {
 		console.log("randomVal=" + configMap.randomVal + "inputVal=" + configMap.inputVal);
 		var diff = Math.abs(configMap.randomVal - configMap.inputVal);
+		
 		var opacityCalc = 1.0 - (diff/100.0); 
 		console.log("opacity " + opacityCalc);
 		$("#horc").css({opacity:opacityCalc});
 		if (! diff)
 			alert("You guessed it right!");
+		else if (diff < 10 && diff < configMap.prevDiff) {
+			alert("You are getting close");
+		}
 	};
 	onClickReveal = function() {
 		alert("My number is " + configMap.randomVal);
