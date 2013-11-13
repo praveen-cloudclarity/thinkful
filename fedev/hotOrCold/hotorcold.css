@@ -85,7 +85,7 @@ body {
 
 #horc {
 	position:absolute;
-	background: -webkit-linear-gradient(top, #ffaf4b 1%,#ff920a 1%);
+	background: -webkit-linear-gradient(top, #ffaf4b 1%,#ff920a 50%);
 	top:0;
 	width:100%;
 	height:100%;
