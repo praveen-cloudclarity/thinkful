@@ -1,0 +1,71 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #afbcc5;
+}
+
+.form-enter {
+  position: relative;
+  font-weight: normal;
+  opacity: 0.5;
+  padding-left:-1px;
+ 
+}
+
+.form-enter .form-control {
+  position: relative;
+  font-size: 18px;
+  height: 50px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-enter .form-control:focus {
+  z-index: 2;
+}
+.form-enter input[type="text"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+span.glyphicon-check {
+	font-size:3.2em;
+	opacity: 0.5;
+}
+
+span.glyphicon-unchecked {
+	font-size:3.2em;
+	opacity: 0.5;
+}
+
+.glyphicon-trash {
+	font-size:3.2em;
+	opacity: 0.5;
+}
+p.glyphicon-tasks {
+	font-size:3.2em;
+	opacity: 0.5;
+}
+
+#col1, #col3{
+	width:10px;
+	opacity:0.8;
+}
+
+#col2-content {
+	font-size:1.5em;
+	opacity: 0.8;
+}
+.container {
+	width:600px;
+}
+
+h1 {
+	opacity: 0.5;
+}
+
+tbody {
+	background-color: white;
+}
