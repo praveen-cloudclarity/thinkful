@@ -1,13 +1,16 @@
 var toDo = (function($) {
-	var rowid = 0;	
-	var onClickCheckbox = function(event) {
+		var rowid = localStorage.getItem('rowid');
+		if (! rowid) {
+			rowid = 0;
+			localStorage.setItem('rowid', rowid);
+		}
+		var onClickCheckbox = function(event) {
 		var row = event.target.parentNode.parentNode;
 		key = $(row).attr('id');
 		var storedObject = JSON.parse(localStorage[key]);
 		storedObject.checked = 1;
 		localStorage.removeItem(key);
-		localStorage.setItem(key, JSON.stringify(storedObject));
-		
+		localStorage.setItem(key, JSON.stringify(storedObject));		
 		$(event.target).removeClass('glyphicon glyphicon-unchecked');
 		$(event.target).addClass('glyphicon glyphicon-check');
 		
@@ -21,6 +24,7 @@ var toDo = (function($) {
 		
 		localStorage.removeItem(key);
 		storedObject.checked = 0;
+	
 		localStorage.setItem(key, JSON.stringify(storedObject));
 	}
 	var addHTMLTableRow = function(text, rowidIn, rowtextid, checked) {
@@ -44,7 +48,6 @@ var toDo = (function($) {
 	}
 	var addLocalStorageEntry = function(textval, rowidin) {
 		var key = "todorow" + rowidin;
-		
 		localStorage.setItem(key, JSON.stringify(textval));
 	}
 	var onClickAdd = function(event, text) {
@@ -56,12 +59,16 @@ var toDo = (function($) {
 		addHTMLTableRow(text, rowid, rowtextid);
 		addLocalStorageEntry(textval, rowid);
 		rowid++;
+		localStorage['rowid'] = rowid;
+		
 	}
 	var loadData = function() {
 		for (var i = 0; i < localStorage.length; i++) {
 			var rowname = localStorage.key(i);
-			var textval = JSON.parse(localStorage.getItem(rowname)); 	
-			addHTMLTableRow(textval.text, rowname, rowname, textval.checked);
+			if (rowname != "rowid") {
+				var textval = JSON.parse(localStorage.getItem(rowname)); 	
+				addHTMLTableRow(textval.text, rowname, rowname, textval.checked);
+			}
 		}
 	}
 	var initModule = function() {
