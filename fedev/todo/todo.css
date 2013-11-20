@@ -1,7 +1,7 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #afbcc5;
+  background-image:url("images/bg.png");
 }
 
 .form-enter {
