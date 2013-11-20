@@ -24,6 +24,7 @@ var hotOrCold = (function($) {
 		else if (diff < 10 && diff < configMap.prevDiff) {
 			alert("You are getting close");
 		}
+		configMap.prevDiff = diff;
 	};
 	onClickReveal = function() {
 		alert("My number is " + configMap.randomVal);
