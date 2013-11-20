@@ -12,8 +12,8 @@ body {
 
 .form-enter .form-control {
   position: relative;
-  font-size: 18px;
-  height: 50px;
+  font-size: 23px;
+  height: 62px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
