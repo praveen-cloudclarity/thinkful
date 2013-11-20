@@ -11,13 +11,11 @@ var toDo = (function($) {
 		storedObject.checked = 1;
 		localStorage.removeItem(key);
 		localStorage.setItem(key, JSON.stringify(storedObject));		
-		$(event.target).removeClass('glyphicon glyphicon-unchecked');
-		$(event.target).addClass('glyphicon glyphicon-check');
-		
+		$(event.target).removeClass('glyphicon glyphicon-unchecked').addClass('glyphicon glyphicon-check');		
 	}
 	var onClickUnCheckbox = function(event) {
-		$(event.target).removeClass('glyphicon glyphicon-check');
-		$(event.target).addClass('glyphicon glyphicon-unchecked');
+		// optimization tips below lines can be converted to one line by calling removeClass.addClass
+		$(event.target).removeClass('glyphicon glyphicon-check').addClass('glyphicon glyphicon-unchecked');
 		var row = event.target.parentNode.parentNode;
 		key = $(row).attr('id');
 		var storedObject = JSON.parse(localStorage[key]);

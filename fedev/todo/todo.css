@@ -8,8 +8,6 @@ body {
   position: relative;
   font-weight: normal;
   opacity: 0.5;
-  padding-left:-1px;
- 
 }
 
 .form-enter .form-control {
@@ -28,6 +26,7 @@ body {
   border-bottom-right-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+ 
 }
 
 span.glyphicon-check {
