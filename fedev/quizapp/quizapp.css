@@ -62,5 +62,6 @@ h1 {
 #options:hover {
 	background-color: #ffffff;
 	opacity:0.1;
+	color: black;
 }
 

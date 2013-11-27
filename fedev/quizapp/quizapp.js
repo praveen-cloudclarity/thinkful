@@ -88,6 +88,10 @@ var quizApp = (function($) {
 		});
 	};
 
+	function animateGravity() {
+		var blocks = document.getElementById('cat-images');
+		blocks.style.top = 400 + 'px';
+	}
 	function prepareSelections(rowelem) {
 		var name = $(rowelem).attr('src');
 		$('.category-row').children().each(function() {
@@ -95,6 +99,7 @@ var quizApp = (function($) {
 			var imageName = $(this).find('#cat-images').attr('src');
 			if (imageName.localeCompare(name) != 0) {
 				$(this).fadeTo("fast", 0.5);
+				//animateGravity();
 			}
 		})
 		setTimeout(function() {
