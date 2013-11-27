@@ -125,7 +125,6 @@ var quizApp = (function($) {
 	};
 	function updateScore() {
 		scored++;
-		console.log("scored=" + scored + "questions=" + numberOfQuestions);
 		var pct = (scored * 100.0) / numberOfQuestions;
 		$('#score').text(pct + "%");
 	};
