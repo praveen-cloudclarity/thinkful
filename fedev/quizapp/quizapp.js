@@ -1,7 +1,7 @@
 var quizApp = (function($) {
 	var questionIndex = 0, correctAnswer="", categoryName="", numberOfQuestions = 0;;
 	var answered = {question:"", status:0};
-	scored = 0;
+	var scored = 0;
 
 	
 	var movie_questions = {"questions":
@@ -82,26 +82,33 @@ var quizApp = (function($) {
 
 		rowtext += '</tbody> </table> </div> </div>';
 		$('.container').append(rowtext);
+		$('.qtable-row').hide();
+		$('.qtable-row').show('slow');
 		
 		$('#quizTable').on('click', '.table-row', function() {
 			answerResponse(this);
 		});
 	};
-
-	function animateGravity() {
-		var blocks = document.getElementById('cat-images');
-		blocks.style.top = 400 + 'px';
-	}
+	
 	function prepareSelections(rowelem) {
 		var name = $(rowelem).attr('src');
+		var selected;
 		$('.category-row').children().each(function() {
-		
+			var left = $(this).position().left;
+			var windowWidth = $(window).width();
+			console.log("position left=" + left + "Window width=" + windowWidth);
+			var moveX = (windowWidth/4 - left); 
 			var imageName = $(this).find('#cat-images').attr('src');
 			if (imageName.localeCompare(name) != 0) {
 				$(this).fadeTo("fast", 0.5);
-				//animateGravity();
+				$(this).animate({top:1200 + 'px'}, 'slow');
+			}
+			else {
+				selected = $(this); 
+				$(this).animate({left:moveX + 'px'}, 'slow');
 			}
 		})
+		$(selected).fadeOut();
 		setTimeout(function() {
 			$('.category-row').remove();
 			$('#category-title').remove();
