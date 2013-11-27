@@ -46,6 +46,7 @@ body {
 }
 .buttons {
 	margin-top:40px;
+	margin-left:-120px;
 }
 .reveal-btn {
 	float:left;
