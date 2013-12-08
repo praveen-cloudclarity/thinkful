@@ -1,0 +1,12 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color:#ffffff;
+  -webkit-background-size: cover;
+  background-size:cover;
+}
+
+h1 {
+	color:#000000;
+	opacity:0.4;
+}

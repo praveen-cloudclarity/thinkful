@@ -1,8 +1,8 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color:#4b2700;
-  -webkit-background-size: cover;
+  //background-image: url('images/icon.png');
+  background-color: rgba(0,255,255,0.39);
   background-size:cover;
 }
 

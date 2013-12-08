@@ -1,0 +1,58 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'node-XMLHttpRequest' ]
+2 info using npm@1.3.14
+3 info using node@v0.10.22
+4 warn package.json trivia@0.0.1 No repository field.
+5 warn package.json trivia@0.0.1 No README data
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'node-XMLHttpRequest', null ]
+8 verbose cache add name=undefined spec="node-XMLHttpRequest" args=["node-XMLHttpRequest",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'node-XMLHttpRequest',
+9 verbose parsed url   path: 'node-XMLHttpRequest',
+9 verbose parsed url   href: 'node-XMLHttpRequest' }
+10 silly lockFile fdaa254e-node-XMLHttpRequest node-XMLHttpRequest
+11 verbose lock node-XMLHttpRequest /Users/praveenam/.npm/fdaa254e-node-XMLHttpRequest.lock
+12 silly lockFile fdaa254e-node-XMLHttpRequest node-XMLHttpRequest
+13 silly lockFile fdaa254e-node-XMLHttpRequest node-XMLHttpRequest
+14 verbose addNamed [ 'node-XMLHttpRequest', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile 31d21a7f-node-XMLHttpRequest node-XMLHttpRequest@
+17 verbose lock node-XMLHttpRequest@ /Users/praveenam/.npm/31d21a7f-node-XMLHttpRequest.lock
+18 silly addNameRange { name: 'node-XMLHttpRequest', range: '*', hasData: false }
+19 verbose url raw node-XMLHttpRequest
+20 verbose url resolving [ 'https://registry.npmjs.org/', './node-XMLHttpRequest' ]
+21 verbose url resolved https://registry.npmjs.org/node-XMLHttpRequest
+22 info trying registry request attempt 1 at 06:38:54
+23 http GET https://registry.npmjs.org/node-XMLHttpRequest
+24 http 404 https://registry.npmjs.org/node-XMLHttpRequest
+25 silly registry.get cb [ 404,
+25 silly registry.get   { server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
+25 silly registry.get     date: 'Fri, 06 Dec 2013 14:38:54 GMT',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'content-length': '52',
+25 silly registry.get     'cache-control': 'must-revalidate' } ]
+26 silly lockFile 31d21a7f-node-XMLHttpRequest node-XMLHttpRequest@
+27 silly lockFile 31d21a7f-node-XMLHttpRequest node-XMLHttpRequest@
+28 error 404 'node-XMLHttpRequest' is not in the npm registry.
+28 error 404 You should bug the author to publish it
+28 error 404
+28 error 404 Maybe try 'npm search     ttp equest'
+28 error 404
+28 error 404 Note that you can also install from a
+28 error 404 tarball, folder, or http url, or git url.
+29 error System Darwin 13.0.0
+30 error command "node" "/usr/local/bin/npm" "install" "node-XMLHttpRequest"
+31 error cwd /Users/praveenam/Development/courses/thinkful/fedev/popMigration
+32 error node -v v0.10.22
+33 error npm -v 1.3.14
+34 error code E404
+35 verbose exit [ 1, true ]

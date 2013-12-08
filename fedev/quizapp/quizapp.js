@@ -95,9 +95,7 @@ var quizApp = (function($) {
 		var selected;
 		$('.category-row').children().each(function() {
 			var left = $(this).position().left;
-			var windowWidth = $(window).width();
-			console.log("position left=" + left + "Window width=" + windowWidth);
-			var moveX = (windowWidth/4 - left); 
+			var moveX = ($(window).width()/4 - left); 
 			var imageName = $(this).find('#cat-images').attr('src');
 			if (imageName.localeCompare(name) != 0) {
 				$(this).fadeTo("fast", 0.5);
@@ -144,7 +142,6 @@ var quizApp = (function($) {
 		selectedText = $(rowelem).find('p:first').text();
 		
 		if (answered.status) {
-			console.log("Question already answered");
 			return;
 		}
 		answered.status = 1;

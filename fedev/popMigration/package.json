@@ -1,0 +1,14 @@
+{
+  "name": "trivia",
+  "version": "0.0.1",
+  "description": "Trivia",
+  "dependencies": {
+     "d3": "3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "author": "",
+  "license": "BSD-2-Clause"
+}
