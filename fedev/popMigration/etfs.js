@@ -25,15 +25,11 @@ function setETFData(data) {
 	obj1.closePrice = data.query.results.quote.LastTradePriceOnly;
 	obj1.volume = data.query.results.quote.Volume;
 	obj1.pctChg = data.query.results.quote.PercentChange;
-	
-	if (xpos > graphWidth) {
-		xpos = 0;
-		ypos += gridHeight;
-	}
+	obj1.value = 1;
 	obj1.xpos = xpos;
 	obj1.ypos = ypos;
 	etfData.children.push(obj1);
-	xpos += gridWidth;
+	
 };
 
 function getETFData() {
@@ -59,6 +55,21 @@ function waitToCreateGrid() {
 	if (! gotETFData) {
 		setTimeout(waitToCreateGrid, 100);
 	} else {
+		etfData.children.sort(function(a, b) {
+		var a1 = getPct(a.pctChg), b1 = getPct(b.pctChg);
+		return (b1 < a1 ? -1 : b1 > a1 ? 1 : 0);
+		});
+		var symIndex = 0;
+		etfData.children.forEach(function(d) {
+			d.value = ++symIndex;
+			if (xpos > graphWidth) {
+				xpos = 0;
+				ypos += gridHeight;
+			}
+			d.xpos = xpos;
+			d.ypos = ypos;
+			xpos += gridWidth;
+		});
 		console.log("createGridMap");
 		createGridMap();
 		d3.select("svg").selectAll('g text').each(insertLineBreaks);
@@ -80,12 +91,20 @@ var insertLineBreaks = function(d) {
 	
 }
 
+var valueAccessor = function (d) {
+	return d.value;
+}
 function createGridMap()
 {
-	var treemap = d3.layout.treemap().size([graphWidth, graphHeight]).nodes(etfData);
+	var treemap = d3.layout.treemap().size([graphWidth, graphHeight]).value(valueAccessor).nodes(etfData);
 
-	var cells = canvas.selectAll("g").data(treemap).enter().append("g")
-				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	var cells = canvas.selectAll("g").data(treemap, 
+								function(d) {
+									if (typeof d.symbol === 'undefined') return;
+									return d.value;
+								})
+								.enter().append("g")
+								.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 	cells.append("rect")
 	.attr("x", function(d) {
 		 return d.xpos;})
