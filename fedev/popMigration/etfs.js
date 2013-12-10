@@ -1,5 +1,6 @@
 var etfs = (function($) {
 
+var treemap;
 var etfData =  {"root":10, "children":[]};
 var etfList = ["SPY", "EEM", "XLF", "VXX", "EWJ", "IWM", "QQQ", "GDX", "VWO", "FXI", "EFA", "UVXY", "EWZ",
 				"TZA", "NUGT", "SLV", "GLD", "IYR", "XLE", "SDS", "XLU", "XLI", "TNA", "XLP", "TLT",
@@ -16,7 +17,7 @@ var gotETFData = false, etfReqs = 0, canvas, xpos = 0, ypos = 0, graphWidth = 12
       graphHeight = 1600 - margin.top - margin.bottom;
 var gridWidth = 100, gridHeight = 100;
 
-var colorScale = d3.scale.linear().domain([, -10.0, -5.0, -1.0, 0, 1, 2])
+var colorScale = d3.scale.linear().domain([, -10.0, -5.0, -1.0, 0, 1, 4])
 				.range(['#ff2c00', '#ff3900', '#ff3d00', '#ffae73', '#ffc973', '#9db82e', '#819f00']);
 
 function setETFData(data) {
@@ -29,7 +30,6 @@ function setETFData(data) {
 	obj1.xpos = xpos;
 	obj1.ypos = ypos;
 	etfData.children.push(obj1);
-	
 };
 
 function getETFData() {
@@ -73,6 +73,8 @@ function waitToCreateGrid() {
 		console.log("createGridMap");
 		createGridMap();
 		d3.select("svg").selectAll('g text').each(insertLineBreaks);
+		setTimeout(refreshData, 5000);
+		gotETFData = false;
 	}
 }
 
@@ -87,16 +89,39 @@ var insertLineBreaks = function(d) {
 	x.append('tspan').text(d.closePrice).attr('x', d.xpos + gridWidth/4).attr('y', d.ypos + 10 + gridHeight/2)
 	.attr('style', 'opacity:0.6');
 	x.append('tspan').text(d.pctChg).attr('x', d.xpos-5 + gridWidth/4).attr('y', d.ypos + 30 + gridHeight/2)
-	.attr('style', 'opacity:0.6');
+	.attr('style', 'opacity:0.6').attr('class', 'pctChange');
 	
 }
 
 var valueAccessor = function (d) {
 	return d.value;
 }
+
+var refreshData = function() {
+
+	var reqs = etfData.length, pendingReq = false;
+
+	getJSONData = function() {
+		if (pendingReq )
+			return;
+		pendingReq = true;
+		// Issue API request	
+	}
+	if (! reqs) {
+
+	}
+}
+
+function refreshGrid() {
+	var pctChange = d3.selectAll(".pctChange");
+	pctChange.text(function(d) {
+		return d.pctChange;
+	});
+}
+
 function createGridMap()
 {
-	var treemap = d3.layout.treemap().size([graphWidth, graphHeight]).value(valueAccessor).nodes(etfData);
+	treemap = d3.layout.treemap().size([graphWidth, graphHeight]).value(valueAccessor).nodes(etfData);
 
 	var cells = canvas.selectAll("g").data(treemap, 
 								function(d) {
